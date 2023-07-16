@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidde scroll-smooth bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <title>more car</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="overflow-x-hidden bg-bg">
+    <nav class="-mt-16 flex items-center justify-between bg-white p-4">
+      <div class="flex items-center px-2">
+        <a href="index.html">
+          <img src="asset image/Logo.png" alt="Logo" class="mr-2 h-full w-full" />
+        </a>
+        <span class="text-lg font-semibold text-white"></span>
+      </div>
+      <div class="-ml-[9.5rem] mt-32 flex flex-grow items-center justify-center gap-5">
+        <input type="text" placeholder="Search Something Here" class="input-ghost input w-[400%] max-w-xs border-2 border-slate-200 bg-white" />
+        <div class="drawer z-40 -mr-20"></div>
+        <div class="-mr-14">
+          <button class="h-11 w-11 rounded-md border border-slate-300">
+            <img
+              class="px-1 py-1"
+              src="data:image/png;base64,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" />
+          </button>
+        </div>
+      </div>
+      <div class="ml-4">
+        <img src="asset image/profile.png" alt="Profil Pengguna" class="h-10 w-10 rounded-full" />
+      </div>
+    </nav>
+    <div class="container mx-auto mt-10 flex items-center justify-center align-middle">
+      <div class="stats h-fit w-fit bg-white">
+        <div class="absolute z-20 m-3 flex">
+          <img src="asset image/Ellipse 11.svg" class="z-10 mr-2 h-4" />
+          <h1 class="-mt-1.5 text-lg font-semibold text-black">Pick-Up</h1>
+        </div>
+        <div v class="stat -ml-3 mt-3">
+          <div class="stat-title mt-7 text-xl font-semibold text-black">Locations</div>
+          <select class="select-bordered select select-sm w-full max-w-xs border-none bg-white">
+            <option disabled selected>City</option>
+            <option>New York</option>
+            <option>Sydney</option>
+            <option>Seattle</option>
+          </select>
+        </div>
+        <div class="stat -ml-4 mt-3">
+          <div class="stat-title mt-7 text-xl font-semibold text-black">Date</div>
+          <input type="text" placeholder=". . ." class="input-ghost input w-full max-w-xs bg-white" />
+        </div>
+        <div class="stat -ml-4 mt-3">
+          <div class="stat-title mt-7 text-xl font-semibold text-black">Time</div>
+          <input type="text" placeholder=". . ." class="input w-full max-w-xs bg-white" />
+        </div>
+      </div>
+    </div>
+    <div class="container absolute z-0 mx-auto -mt-3 flex items-center justify-center align-middle">
+      <button class="rounded-xl bg-blue-600 px-4 py-4 shadow-xl shadow-blue-100 transition-all hover:shadow-blue-200 active:bg-blue-300 active:px-3 active:py-3">
+        <img
+          class="h-7 w-7"
+          src="data:image/png;base64,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" />
+      </button>
+    </div>
+    <div class="container mx-auto mb-20 mt-10 flex items-center justify-center align-middle">
+      <div class="stats h-fit w-fit bg-white">
+        <div class="absolute z-20 m-3 flex">
+          <img src="asset image/Ellipse 12.svg" class="mr-2 h-4" />
+          <h1 class="-mt-1.5 text-lg font-semibold text-black">Drop-Off</h1>
+        </div>
+        <div v class="stat -ml-3 mt-3">
+          <div class="stat-title mt-7 text-xl font-semibold text-black">Locations</div>
+          <select class="select-bordered select select-sm w-full max-w-xs border-none bg-white">
+            <option disabled selected>City</option>
+            <option>New York</option>
+            <option>Sydney</option>
+            <option>Seattle</option>
+          </select>
+        </div>
+        <div class="stat -ml-4 mt-3">
+          <div class="stat-title mt-7 text-xl font-semibold text-black">Date</div>
+          <input type="text" placeholder=". . ." class="input-ghost input w-full max-w-xs bg-white" />
+        </div>
+        <div class="stat -ml-4 mt-3">
+          <div class="stat-title mt-7 text-xl font-semibold text-black">Time</div>
+          <input type="text" placeholder=". . ." class="input w-full max-w-xs bg-white" />
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto mt-20 flex items-center justify-center align-middle">
+      <div class="flex-col">
+        <div class="card card-compact h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">All New Rush</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-44 items-start justify-start" src="asset image/car2.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">70L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">6 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a href="checkout.html" class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">CR-V</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-44 items-start justify-start" src="asset image/car4.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">80L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">6 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a href="checkout.html" class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">All New Terios</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-44 items-start justify-start" src="asset image/car5.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">90L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">6 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a href="checkout.html" class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">Nissan GTR</h1>
+          <p class="mx-5 mt-3">Sport</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-44 items-start justify-start" src="asset image/car6.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-24 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">80L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">2 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a href="checkout.html" class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">MG ZX Exclusive</h1>
+          <p class="mx-5 mt-3">Hatchback</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-56 items-start justify-start" src="asset image/car7.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">70L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">4 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a href="checkout.html" class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">Roll Royce</h1>
+          <p class="mx-5 mt-3">limousin</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-48 items-start justify-start" src="asset image/car9.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">100L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Matic</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">8 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">Koenigsegg</h1>
+          <p class="mx-5 mt-3">Super Car</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-56 items-start justify-start" src="asset image/Car.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">95L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">2 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">Ferrari</h1>
+          <p class="mx-5 mt-3">Sport</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-56 items-start justify-start" src="asset image/car10.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">60L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Matic</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">2 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">BMW</h1>
+          <p class="mx-5 mt-3">Sedan</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-56 items-start justify-start" src="asset image/car11.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">75L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Matic</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">4 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">Fortuner</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-48 items-start justify-start" src="asset image/car12.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">85L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">6 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">All New Fortuner</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-56 items-start justify-start" src="asset image/car13.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-32 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">90L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Matic</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">6 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">XPander</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-48 items-start justify-start" src="asset image/car14.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-28 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">80L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Matic</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">6 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">Avanza</h1>
+          <p class="mx-5 mt-3">SUV</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-48 items-start justify-start" src="asset image/car15.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-32 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">70L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Manual</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">4 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+        <div class="card card-compact mt-10 h-full w-[21rem] bg-white">
+          <h1 class="m-5 -mb-3 text-xl font-semibold text-black">All New Alphard</h1>
+          <p class="mx-5 mt-3">Family Premium Car</p>
+          <figure class="container float-left -ml-16 mt-16 items-start justify-start"><img class="container float-left w-52 items-start justify-start" src="asset image/car16.png" alt="Shoes" /></figure>
+          <div class="card-body">
+            <div class="-mt-32 ml-52 items-end justify-end">
+              <div class="flex">
+                <img class="mt-1 h-4 w-4" src="asset image/gas-station.svg" />
+                <p class="text-md mx-1">80L</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/Car (1).svg" />
+                <p class="text-md mx-1">Matic</p>
+              </div>
+              <div class="mt-3 flex">
+                <img class="mt-1 h-4 w-4" src="asset image/profile.svg" />
+                <p class="text-md mx-1">8 People</p>
+              </div>
+            </div>
+            <div class="container mx-2 mt-[5rem] flex">
+              <h1 class="text-xl font-semibold text-black">$72.00/ <span class="text-sm font-semibold text-slate-400">day</span></h1>
+            </div>
+            <a class="btn-neutral btn mt-2 border-2 border-blue-600 bg-white text-blue-600 active:bg-blue-600 active:text-white">Rental Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container btm-nav mx-auto flex items-center justify-center rounded bg-white bg-opacity-20 align-middle drop-shadow-lg backdrop-blur-sm">
+      <a href="index.html">
+        <img
+          class="h-5 w-5"
+          src="data:image/png;base64,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" />
+      </a>
+      <a href="car.html">
+        <img
+          class="h-5 w-5"
+          src="data:image/png;base64,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" />
+      </a>
+      <a>
+        <img
+          class="h-5 w-5"
+          src="data:image/png;base64,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" />
+      </a>
+    </div>
+   <footer footer class="mt-24 h-full w-full border-t-2 bg-bg">
+      <img class="mx-5 mt-10" src="asset image/Logo.png" />
+      <p class="mx-5 mt-4 w-[17rem] text-blue-300">Our vision is to provide convenience and help increase your sales business.</p>
+      <div class="flex">
+        <div class="mx-5 mt-16">
+          <h1 class="text-3xl font-semibold text-black">About</h1>
+          <ul class="mt-5">
+            <li><a class="text-xl text-sky-600"> How it works</a></li>
+            <li class="mt-3"><a class="text-xl text-sky-600">Featured</a></li>
+            <li class="mt-3"><a class="text-xl text-sky-600">Partnership</a></li>
+            <li class="mt-3"><a class="text-xl text-sky-600">Bussiness Relation</a></li>
+          </ul>
+        </div>
+        <div class="ml-16 mt-16">
+          <h1 class="text-3xl font-semibold text-black">Social</h1>
+          <ul class="mt-5">
+            <li><a class="text-xl text-sky-600">Discord</a></li>
+            <li class="mt-3"><a class="text-xl text-sky-600">Instagram</a></li>
+            <li class="mt-3"><a class="text-xl text-sky-600">Twitter</a></li>
+            <li class="mt-3"><a class="text-xl text-sky-600">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mx-5 mt-14">
+        <h1 class="text-3xl font-semibold text-black">Community</h1>
+        <ul class="mt-5">
+          <li><a class="text-xl text-sky-600">Events</a></li>
+          <li class="mt-3"><a class="text-xl text-sky-600">Blog</a></li>
+          <li class="mt-3"><a class="text-xl text-sky-600">Podcast</a></li>
+          <li class="mt-3"><a class="text-xl text-sky-600">Invite a friend</a></li>
+        </ul>
+      </div>
+      <div class="m-5 mt-14 flex gap-[6.7rem]">
+        <a class="font-semibold text-black">Privacy Policy</a>
+        <a class="font-semibold text-black">Terms & Condition</a>
+      </div>
+      <div class="mx-5 mb-5 mt-10">
+        <h1 class="text-sm font-semibold text-black">&copy;2022 MORENT.All rights reserved</h1>
+      </div>
+    </footer>
+  </body>
+</html>
